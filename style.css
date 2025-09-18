@@ -3,6 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #333;
     line-height: 1.6;
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura */
 }
 
 /* Sección principal que ocupa toda la pantalla */
@@ -10,13 +11,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Se adapta a la altura del contenido */
     text-align: center;
     background-color: #fff;
     padding: 20px;
     box-sizing: border-box;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden; /* Evita el scroll horizontal */
 }
 
 /* Contenido de la sección principal */
@@ -27,6 +28,7 @@ body {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     backdrop-filter: blur(10px);
+    width: 90%; /* Ajuste para móviles */
 }
 
 /* Contenedor para las fotos, que las distribuye uniformemente */
@@ -35,6 +37,7 @@ body {
     justify-content: center;
     gap: 15px;
     margin-bottom: 25px;
+    flex-wrap: wrap; /* Permite que las fotos se envuelvan a la siguiente línea */
 }
 
 /* Estilo para las fotos */
@@ -72,6 +75,7 @@ h1 {
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan a la siguiente línea */
 }
 
 /* Botón de contacto */
@@ -86,7 +90,8 @@ h1 {
     letter-spacing: 1px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     border: 2px solid transparent;
-    white-space: nowrap; /* Evita que el texto se rompa */
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .contact-button:hover {
@@ -100,39 +105,55 @@ h1 {
     to { opacity: 1; }
 }
 
-/* --- REGLAS PARA MÓVILES (Media Query) --- */
+/* --- REGLAS PARA TABLETS Y MÓVILES --- */
 @media screen and (max-width: 768px) {
-    /* Reduce el tamaño del título */
     h1 {
         font-size: 2.5em;
     }
 
-    /* Reduce el tamaño del subtítulo */
     .tagline {
         font-size: 1em;
     }
 
-    /* Hace que los botones se apilen verticalmente */
+    .photo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-photo {
+        width: 120px;
+        height: 120px;
+    }
+
     .button-container {
         flex-direction: column;
         gap: 10px;
     }
 
-    /* Ajusta el padding de los botones para que no se vean cortados */
     .contact-button {
-        padding: 12px 25px;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* --- REGLAS ADICIONALES PARA MÓVILES MUY PEQUEÑOS --- */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .tagline {
         font-size: 0.9em;
     }
-    
-    /* Hace que las fotos se apilen verticalmente en una columna */
-    .photo-container {
-        flex-direction: column;
-        align-items: center;
+
+    .hero-photo {
+        width: 100px;
+        height: 100px;
     }
     
-    /* Ajusta el tamaño de las fotos para móviles */
-    .hero-photo {
-        width: 120px;
-        height: 120px;
+    .contact-button {
+        font-size: 0.9em;
+        padding: 12px 20px;
+        width: 100%;
     }
 }
