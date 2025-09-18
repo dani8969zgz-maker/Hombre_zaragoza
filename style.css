@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Sección principal que ocupa toda la pantalla */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenido de la sección principal */
+.hero-content {
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* Contenedor para las fotos, que las distribuye uniformemente */
+.photo-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Estilo para las fotos */
+.hero-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Para un efecto circular */
+    border: 3px solid #B52C0E; /* Rosa intenso */
+    transition: transform 0.3s ease;
+}
+
+.hero-photo:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Título principal */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    color: #B52C0E;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Subtítulo */
+.tagline {
+    font-size: 1.2em;
+    margin: 10px 0 30px;
+}
+
+/* Botón de contacto */
+.contact-button {
+    display: inline-block;
+    background-color: #42BD20;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.contact-button:hover {
+    background-color: #B52C0E;
+    transform: translateY(-5px); /* Efecto de elevación */
+}
+
+/* Animación para el fondo, que puede ser útil si no usas una imagen */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* NUEVO: Contenedor para los botones */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 20px;
+}
+
+/* Opcional: Si quieres un color diferente para el botón de E-mail */
+.email-button {
+    background-color: #B3B6C7; /* Mantenemos el rosa */
+}
+
+.email-button:hover {
+    background-color: #B52C0E; /* Un rosa un poco más oscuro al pasar el ratón */
+}
