@@ -81,7 +81,7 @@ h1 {
 /* Botón de contacto */
 .contact-button {
     display: inline-block;
-    background-color: #ff69b4;
+    background-color: #42BD20;
     color: #fff;
     padding: 15px 30px;
     text-decoration: none;
@@ -95,7 +95,7 @@ h1 {
 }
 
 .contact-button:hover {
-    background-color: #e55a9f;
+    background-color: #B52C0E;
     transform: translateY(-5px);
 }
 
@@ -157,4 +157,5 @@ h1 {
         width: 100%;
     }
 }
+
 
